@@ -72,40 +72,47 @@ const Experience = () => {
                           Why choose us
                         </span>
                         <br />
-                        <span
+                        {/* <p
                           ref={(el) => {
                             if (el) textRefs.current.push(el);
                           }}
                           className="tp-section-title-2 tp-split__text tp-split__in-right mb-40"
+                          style={{ color: "black" }}
                         >
-                          <span style={{ color: "var(--tp-theme-primary)" }}>
+                          <span
+                            style={{
+                              color: "var(--tp-theme-primary)  !important",
+                            }}
+                          >
                             17+ years{" "}
                           </span>
                           Of Storytelling
                           <br />
                           Turning{" "}
-                          <span style={{ color: "var(--tp-theme-primary)" }}>
+                          <span
+                            style={{
+                              color: "var(--tp-theme-primary) !important",
+                            }}
+                          >
                             Brands{" "}
                           </span>
                           in to <br />
                           Household Names
-                          <span className="tp-section-title-2-shape">
-                            <svg
-                              width="285"
-                              height="62"
-                              viewBox="0 0 285 62"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M236.253 5.07359C183.363 0.169412 64.9985 -2.46658 14.6555 26.2229C-48.2733 62.0846 140.247 63.034 212.012 57.4869C254.951 54.1679 283 46.0474 283 34.2986C283 24.1837 234.294 8.98158 146.145 11.8551"
-                                stroke="currentColor"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                              />
-                            </svg>
-                          </span>
-                        </span>
+                        </p> */}
+
+                        <p
+                          className="tp-section-title-2"
+                          style={{ color: "black" }}
+                        >
+                          <span
+                            style={{
+                              color: "var(--tp-theme-primary) !important",
+                            }}
+                          >
+                            17+ Years
+                          </span>{" "}
+                          Of Storytelling Turning Brands in to Household Names
+                        </p>
                         <p>
                           We’ve held hands with budding brands that have
                           shattered sealings of convention. With us behind them,

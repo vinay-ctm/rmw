@@ -2435,6 +2435,10 @@ xclip
   background: #a1611c;
 }
 
+.why-us-color-text {
+  color: #8a5a0d;
+}
+
 /*----------------------------------------*/
 /*  2.8 Cursor Style
 /*----------------------------------------*/
@@ -3227,7 +3231,6 @@ xclip
   font-weight: 600;
   font-size: 40px;
   line-height: 1.5;
-  color: var(--tp-common-black);
   z-index: 5;
 }
 
