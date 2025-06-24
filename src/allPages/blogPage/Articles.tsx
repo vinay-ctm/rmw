@@ -39,7 +39,7 @@ const Blogs: React.FC = () => {
   }, []);
 
   // Filter blogs by search query (case-insensitive title match)
-  const filteredBlogs = blogs.filter(blog =>
+  const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -68,7 +68,6 @@ const Blogs: React.FC = () => {
 
   return (
     <div className="container mt-4 mb-50">
-
       {/* Search Input */}
       <div className="text-center mb-4">
         <input
@@ -88,7 +87,10 @@ const Blogs: React.FC = () => {
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-4">
         {currentCards.map((article, index) => (
           <Link href={article.slug} className="col" key={index}>
-            <div style={{ background: "white", color: "black" }} className="card h-100">
+            <div
+              style={{ background: "white", color: "black" }}
+              className="card h-100"
+            >
               <div style={{ overflow: "hidden", height: "200px" }}>
                 <img
                   src={`/blogs/${article.blog_image}`}
@@ -100,8 +102,12 @@ const Blogs: React.FC = () => {
                     objectFit: "fill",
                     transition: "all 0.3s ease-in-out",
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.transform = "scale(1.1)")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")
+                  }
                 />
               </div>
               <div className="card-body">
@@ -143,7 +149,14 @@ const Blogs: React.FC = () => {
             ⬅ Prev
           </button>
 
-          <span style={{ fontSize: "16px", padding: "5px 15px", color: "#0c0c0c", borderRadius: "20px" }}>
+          <span
+            style={{
+              fontSize: "16px",
+              padding: "5px 15px",
+              color: "#0c0c0c",
+              borderRadius: "20px",
+            }}
+          >
             Page {currentPage} of {totalPages}
           </span>
 
@@ -170,7 +183,9 @@ const Blogs: React.FC = () => {
 
       {/* No Results Message */}
       {filteredBlogs.length === 0 && (
-        <p className="text-center text-muted mt-4">No blogs found for your search.</p>
+        <p className="text-center text-muted mt-4">
+          No blogs found for your search.
+        </p>
       )}
     </div>
   );

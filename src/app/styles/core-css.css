@@ -903,12 +903,7 @@ div.demo img {
   /* border-radius: 25px; */
 }
 
-.tp-accordion .accordion-item:last-of-type {
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-
-.tp-accordion .accordion-item:last-of-type .accordion-button.collapsed {
+:last-of-type {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -2414,6 +2409,30 @@ xclip
 
 .tp-icon-style:hover {
   color: var(--tp-theme-primary);
+}
+
+.accordion-item {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.tp-accordion .accordion-header .accordion-button {
+  background-color: #fff;
+  border-radius: 0;
+}
+.accordion-body {
+  border: none;
+}
+
+.awards-icon {
+  background: linear-gradient(90deg, #f1850f, #8b4d09);
+}
+.footer-icon {
+  background: linear-gradient(90deg, #f1850f, #8b4d09);
+  border: none;
+}
+.footer-icon:hover {
+  background: #a1611c;
 }
 
 /*----------------------------------------*/
@@ -7148,7 +7167,8 @@ input.search-input-field {
   line-height: 115px;
   text-align: center;
   font-size: 25px;
-  background-color: #000;
+  /* background-color: var(--tp-theme-primary); */
+  background: linear-gradient(90deg, #f1850f, #8b4d09);
   color: var(--tp-common-black);
   transform: rotate(-10deg);
   border-radius: 50%;
@@ -7162,7 +7182,7 @@ input.search-input-field {
   top: 0;
   left: 0;
   content: "";
-  background-color: var(--tp-theme-primary);
+  background-color: black;
   border-radius: 50%;
   opacity: 0;
   visibility: hidden;

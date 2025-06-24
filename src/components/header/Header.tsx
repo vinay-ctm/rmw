@@ -89,6 +89,38 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Fetch all blogs slug and store it in an array and then highlight the link is pathname == any slug from array
+  interface Article {
+    blog_image: string;
+    slug: string;
+    title: string;
+    description: string;
+    created_at: string;
+  }
+  const [blogs, setBlogs] = useState<Article[]>([]);
+  const blog_slugs: string[] = [];
+  useEffect(() => {
+    const fetchBlogSlug = async () => {
+      try {
+        const response = await axios.get("/api/all_blogs");
+        setBlogs(response.data);
+      } catch (error) {
+        console.log("Error in blogs slug only API", error);
+      }
+    };
+    fetchBlogSlug();
+  }, []);
+
+  blogs.map((blog) => {
+    blog_slugs.push(blog.slug);
+  });
+
+  let isBlog = false;
+  const pathSlug = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  if (blog_slugs.includes(pathSlug.slice(1))) {
+    isBlog = true;
+  }
+
   return (
     <header>
       <div
@@ -127,17 +159,36 @@ const Header = () => {
                 <nav>
                   <ul id="menu-main-menu" className="menu-main-menu">
                     <li className="nav-item">
-                      <Link href="/" className="nav-links">
+                      <Link
+                        href="/"
+                        className="nav-links"
+                        style={{
+                          color: pathname === "/" ? "#8a5a0d" : "inherit",
+                        }}
+                      >
                         Home
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/about/" className="nav-links">
+                      <Link
+                        href="/about/"
+                        className="nav-links"
+                        style={{
+                          color: pathname === "/about" ? "#8a5a0d" : "inherit",
+                        }}
+                      >
                         About
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/services" className="nav-links">
+                      <Link
+                        href="/services"
+                        className="nav-links"
+                        style={{
+                          color:
+                            pathname === "/services" ? "#8a5a0d" : "inherit",
+                        }}
+                      >
                         Services
                       </Link>
 
@@ -229,17 +280,40 @@ const Header = () => {
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/our-work/" className="nav-links">
+                      <Link
+                        href="/our-work/"
+                        className="nav-links"
+                        style={{
+                          color:
+                            pathname === "/our-work" ? "#8a5a0d" : "inherit",
+                        }}
+                      >
                         Our Work
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/blog" className="nav-links">
+                      <Link
+                        href="/blog"
+                        className="nav-links"
+                        style={{
+                          color:
+                            pathname === "/blog" || isBlog === true
+                              ? "#8a5a0d"
+                              : "inherit",
+                        }}
+                      >
                         Blog
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/contact/" className="nav-links">
+                      <Link
+                        href="/contact/"
+                        className="nav-links"
+                        style={{
+                          color:
+                            pathname === "/contact" ? "#8a5a0d" : "inherit",
+                        }}
+                      >
                         Contact us
                       </Link>
                     </li>

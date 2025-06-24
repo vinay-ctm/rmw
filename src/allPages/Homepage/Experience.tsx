@@ -31,8 +31,7 @@ const Experience = () => {
               <div
                 className="tp-chooseus__bg-thumb d-none d-xl-block wow avtrix_clip_right"
                 style={{
-                  backgroundImage:
-                    "url(/about-images/Team_rmw.jpg)"
+                  backgroundImage: "url(/about-images/Team_rmw.jpg)",
                 }}
                 data-wow-delay=".3s"
                 data-wow-duration="2.5s"
@@ -72,13 +71,18 @@ const Experience = () => {
                         >
                           Why choose us
                         </span>
-                        <h3
+                        <br />
+                        <span
                           ref={(el) => {
                             if (el) textRefs.current.push(el);
                           }}
                           className="tp-section-title-2 tp-split__text tp-split__in-right mb-40"
                         >
-                          17+ Years Of Storytelling <br />
+                          <span style={{ color: "var(--tp-theme-primary)" }}>
+                            17+ years{" "}
+                          </span>
+                          Of Storytelling
+                          <br />
                           Turning{" "}
                           <span style={{ color: "var(--tp-theme-primary)" }}>
                             Brands{" "}
@@ -101,7 +105,7 @@ const Experience = () => {
                               />
                             </svg>
                           </span>
-                        </h3>
+                        </span>
                         <p>
                           We’ve held hands with budding brands that have
                           shattered sealings of convention. With us behind them,
@@ -111,18 +115,37 @@ const Experience = () => {
                       </div>
                       <div className="tp-experience">
                         <div className="tp-ex-contain">
-                          <div className="tp-ex-icon"><SiAdobecreativecloud size={40}/></div>
-                          <h2 className="tp-ex-head" style={{color: "#0c0c0c", textAlign:"center"}}>Creative Strategy</h2>
-                        </div>
-                        <div className="tp-ex-contain">
-                          <div className="tp-ex-icon"><FaGlobe size={40}/></div>
-                          <h2 className="tp-ex-head" style={{color: "#0c0c0c", textAlign:"center"}}>Digital Marketing</h2>
+                          <div className="tp-ex-icon">
+                            <SiAdobecreativecloud size={40} color="#8a5a0d" />
+                          </div>
+                          <h2
+                            className="tp-ex-head"
+                            style={{ color: "#0c0c0c", textAlign: "center" }}
+                          >
+                            Creative Strategy
+                          </h2>
                         </div>
                         <div className="tp-ex-contain">
                           <div className="tp-ex-icon">
-                          <BiAnalyse size={40} />
+                            <FaGlobe size={40} color="#8a5a0d" />
                           </div>
-                          <h2 className="tp-ex-head" style={{color: "#0c0c0c", textAlign:"center"}}>Market Analysis</h2>
+                          <h2
+                            className="tp-ex-head"
+                            style={{ color: "#0c0c0c", textAlign: "center" }}
+                          >
+                            Digital Marketing
+                          </h2>
+                        </div>
+                        <div className="tp-ex-contain">
+                          <div className="tp-ex-icon">
+                            <BiAnalyse size={40} color="#8a5a0d" />
+                          </div>
+                          <h2
+                            className="tp-ex-head"
+                            style={{ color: "#0c0c0c", textAlign: "center" }}
+                          >
+                            Market Analysis
+                          </h2>
                         </div>
                       </div>
                     </div>

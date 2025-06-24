@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -33,6 +33,7 @@ const Home = () => {
 
   // vertical position centered roughly in the SVG
   const textY = svgHeight / 2;
+
   return (
     <div
       className="elementor-element elementor-element-199ac0f e-con-full e-flex e-con e-parent"
@@ -53,10 +54,7 @@ const Home = () => {
           data-widget_type="hero-banner.default"
         >
           <div className="elementor-widget-container">
-            <section
-              className="tp-hero__area fix tp-hero__space tp-hero__bg p-relative tp-bg-className"
-            >
-
+            <section className="tp-hero__area fix tp-hero__space tp-hero__bg p-relative tp-bg-className">
               <div className="tp-hero__wrap">
                 <div className="container">
                   <div className="row">
@@ -139,7 +137,10 @@ const Home = () => {
                       </div>
                       <div className="tp-hero__action d-flex align-items-center">
                         <span>
-                          <Link href="/services" className="tp-hero__action-btn">
+                          <Link
+                            href="/services"
+                            className="tp-hero__action-btn"
+                          >
                             <span>
                               <svg
                                 width="33"
@@ -189,7 +190,7 @@ const Home = () => {
                             </span>
                           </div>
                         </div>
-                        <p>
+                        <p style={{ color: "#8a5a0d" }}>
                           Billions of words written, Millions of Creatives
                           Delivered, Thousands of Campaigns executed, and
                           hundreds of success stories completed. This is a quick

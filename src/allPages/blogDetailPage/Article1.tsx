@@ -11,7 +11,6 @@
 // import { Autoplay } from 'swiper/modules';
 // import 'swiper/css';
 
-
 // const images = [
 //   // Images from public/about-images folder
 //   { src: '/about-images/about-head.webp', title: 'about Heading' },
@@ -45,7 +44,6 @@
 //   description: string;
 //   created_at: string;
 // }
-
 
 // const Article1 = () => {
 //   const [article, setArticle] = useState<BlogPosts | null>(null);
@@ -267,7 +265,6 @@
 
 // export default Article1;
 
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -281,7 +278,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-
 type RelatedBlog = {
   id: number;
   title: string;
@@ -289,7 +285,6 @@ type RelatedBlog = {
   blog_image: string;
   created_at: string;
 };
-
 
 type Sidecard = {
   id: number;
@@ -344,9 +339,11 @@ const Article1 = () => {
         const related = await axios.get(`/api/blog/related/${blog_slug}`);
         setRelatedBlogs(related.data.related);
         setArticle(response.data.blog);
-        setSidecard(response_card.data); // ✅ Assumes response.data.blog is array
+        setSidecard(response_card.data); // ✅ Assumes response.data.blog is array);
       } catch (err) {
-        setError(err instanceof Error ? err.message : "An unknown error occurred");
+        setError(
+          err instanceof Error ? err.message : "An unknown error occurred"
+        );
       } finally {
         setLoading(false);
       }
@@ -364,7 +361,10 @@ const Article1 = () => {
         <div className="row">
           {/* Main Content */}
           <div className="col-md-8" ref={contentRef}>
-            <div className="text-white rounded shadow-sm" style={{ backgroundColor: "#f2f2f2" }}>
+            <div
+              className="text-white rounded shadow-sm"
+              style={{ backgroundColor: "#f2f2f2" }}
+            >
               <img
                 src={`/blogs/${article.blog_image}`}
                 alt={article.slug}
@@ -378,7 +378,9 @@ const Article1 = () => {
                   day: "numeric",
                 }).format(new Date(article.created_at))}
               </div>
-              <div className="blog_description px-4">{parse(article.description)}</div>
+              <div className="blog_description px-4">
+                {parse(article.description)}
+              </div>
             </div>
           </div>
 
@@ -395,67 +397,120 @@ const Article1 = () => {
               }}
             >
               {/* Search */}
-              <div className="p-3 rounded shadow-sm mb-4" style={{ backgroundColor: "#1f1f1f" }}>
-        <h5 className="mb-3 text-white">Search</h5>
-        <form onSubmit={handleSearch}>
-          <div className="input-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="btn btn-primary" type="submit">
-              <IoSearchSharp />
-            </button>
-          </div>
-        </form>
-      </div>
+              <div
+                className="p-3 rounded shadow-sm mb-4"
+                style={{ backgroundColor: "#1f1f1f" }}
+              >
+                <h5 className="mb-3 text-white">Search</h5>
+                <form onSubmit={handleSearch}>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button
+                      className="btn "
+                      style={{ backgroundColor: "#8a5a0d" }}
+                      type="submit"
+                    >
+                      <IoSearchSharp style={{ color: "white" }} />
+                    </button>
+                  </div>
+                </form>
+              </div>
 
               {/* Recent Posts */}
-              <div className="p-3 text-white rounded shadow-sm mb-4" style={{ backgroundColor: "#1f1f1f" }}>
-        <h5 className="mb-3 text-white">Recent Posts</h5>
-        {filteredPosts.map((post) => (
-          <div key={post.id} className="d-flex mb-3 gap-3">
-            <Link href={`/${post.slug}`}>
-              <img
-                src={`/blogs/${post.blog_image}`}
-                alt={post.title}
-                className="rounded me-3"
-                style={{ width: "190px", height: "80px", objectFit: "cover" }}
-              />
-            </Link>
-            <div>
-              <h6 className="mb-1 text-white">
-                <Link href={`/${post.slug}`}>{post.title}</Link>
-              </h6>
-              <small className="text-white">
-                {new Intl.DateTimeFormat("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                }).format(new Date(post.created_at))}
-              </small>
-            </div>
-          </div>
-        ))}
-      </div>
+              <div
+                className="p-3 text-white rounded shadow-sm mb-4"
+                style={{ backgroundColor: "#1f1f1f" }}
+              >
+                <h5 className="mb-3 text-white">Recent Posts</h5>
+                {filteredPosts.map((post) => (
+                  <div key={post.id} className="d-flex mb-3 gap-3">
+                    <Link href={`/${post.slug}`}>
+                      <img
+                        src={`/blogs/${post.blog_image}`}
+                        alt={post.title}
+                        className="rounded me-3"
+                        style={{
+                          width: "190px",
+                          height: "80px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </Link>
+                    <div>
+                      <h6 className="mb-1 text-white">
+                        <Link href={`/${post.slug}`}>{post.title}</Link>
+                      </h6>
+                      <small className="text-white">
+                        {new Intl.DateTimeFormat("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        }).format(new Date(post.created_at))}
+                      </small>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               {/* Categories */}
-              <div className="p-3 rounded text-white shadow-sm mb-4" style={{ backgroundColor: "#1f1f1f" }}>
+              <div
+                className="p-3 rounded text-white shadow-sm mb-4"
+                style={{ backgroundColor: "#1f1f1f" }}
+              >
                 <h5 className="mb-3 text-white">Categories</h5>
                 <ul className="list-unstyled mb-0">
-                  <li><Link href="/category/digital-marketing-agency">Digital Marketing Agency</Link></li>
-                  <li><Link href="/category/artist-management-agency">Artist Management Agency</Link></li>
-                  <li><Link href="/category/best-ad-agency">Best Ad Agency</Link></li>
-                  <li><Link href="/category/case-study">Case Study</Link></li>
-                  <li><Link href="/category/celebrity-endorsements-agency">Celebrity Endorsements Agency</Link></li>
-                  <li><Link href="/category/fm-radio-advertising">FM Radio Advertising</Link></li>
-                  <li><Link href="/category/graphic-designing-service">Graphic Designing Service</Link></li>
-                  <li><Link href="/category/performance-marketing-agency">Performance Marketing Agency</Link></li>
-                  <li><Link href="/category/print-advertising-agency">Print Advertising Agency</Link></li>
-                  <li><Link href="/category/web-design-and-development">Web Design and Development</Link></li>
+                  <li>
+                    <Link href="/category/digital-marketing-agency">
+                      Digital Marketing Agency
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/artist-management-agency">
+                      Artist Management Agency
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/best-ad-agency">Best Ad Agency</Link>
+                  </li>
+                  <li>
+                    <Link href="/category/case-study">Case Study</Link>
+                  </li>
+                  <li>
+                    <Link href="/category/celebrity-endorsements-agency">
+                      Celebrity Endorsements Agency
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/fm-radio-advertising">
+                      FM Radio Advertising
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/graphic-designing-service">
+                      Graphic Designing Service
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/performance-marketing-agency">
+                      Performance Marketing Agency
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/print-advertising-agency">
+                      Print Advertising Agency
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/web-design-and-development">
+                      Web Design and Development
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -464,7 +519,9 @@ const Article1 = () => {
       </div>
 
       {/* Swiper Carousel */}
-      <div style={{ width: "100vw", overflow: "hidden", padding: "5rem 0 3rem" }}>
+      <div
+        style={{ width: "100vw", overflow: "hidden", padding: "5rem 0 3rem" }}
+      >
         <Swiper
           modules={[Autoplay]}
           loop={true}
@@ -481,7 +538,14 @@ const Article1 = () => {
         >
           {relatedBlogs.map((image, index) => (
             <SwiperSlide key={index}>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
                 <Link href={`/${image.slug}`}>
                   <img
                     src={`/blogs/${image.blog_image}`}
@@ -489,7 +553,15 @@ const Article1 = () => {
                     loading="lazy"
                     style={{ width: "100%", height: "80%", objectFit: "cover" }}
                   />
-                  <h3 style={{ margin: "10px 0 0", fontSize: "1.2rem", textAlign: "center" }}>{image.title}</h3>
+                  <h3
+                    style={{
+                      margin: "10px 0 0",
+                      fontSize: "1.2rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    {image.title}
+                  </h3>
                 </Link>
               </div>
             </SwiperSlide>

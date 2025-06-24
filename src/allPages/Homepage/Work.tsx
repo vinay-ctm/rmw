@@ -23,16 +23,13 @@ const Work = () => {
           <div className="elementor-widget-container">
             <div className="tp-funfact__area fix tp-funfact__1 p-relative">
               <div className="tp-funfact__shape">
-                <img
+                {/* <img
                   decoding="async"
                   src="https://etorisoft.com/wp/avtrix/wp-content/uploads/2024/08/funfact-shape-1-1.png"
                   alt=""
-                  style={{
-                    filter:
-                      "sepia(10%) saturate(120%) brightness(105%) hue-rotate(185deg)",
-                  }}
+
                   // filter: "sepia(100%) saturate(500%) hue-rotate(10deg)"
-                />
+                /> */}
               </div>
               <div
                 className="tp-funfact__box tp-funfact__bg pb-35"

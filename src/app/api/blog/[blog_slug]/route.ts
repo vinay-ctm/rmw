@@ -1,5 +1,3 @@
-
-
 import { NextRequest, NextResponse } from "next/server";
 import { getDBPool } from "@/lib/db";
 import { RowDataPacket } from "mysql2";
@@ -28,13 +26,16 @@ export async function GET(
       return NextResponse.json({ error: "Blog not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ blog: rows[0] }, { status: 200 });
+    const isBlog = true;
+    return NextResponse.json({ blog: rows[0], isBlog }, { status: 200 });
   } catch (error) {
     console.error("Error fetching blog:", error);
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }
-
 
 // PUT (Update blog by slug)
 export async function PUT(
@@ -45,7 +46,10 @@ export async function PUT(
     const { blog_slug } = await context.params;
 
     if (!blog_slug) {
-      return NextResponse.json({ error: "Blog slug is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Blog slug is required" },
+        { status: 400 }
+      );
     }
 
     const db = getDBPool();
@@ -115,10 +119,15 @@ export async function PUT(
       ]
     );
 
-    return NextResponse.json({ message: "Blog updated successfully!" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Blog updated successfully!" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error updating blog:", error);
-    return NextResponse.json({ error: "Failed to update blog" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update blog" },
+      { status: 500 }
+    );
   }
 }
-

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useSplitText } from "@/hooks/useSplitText";
+// import { useSplitText } from "@/hooks/useSplitText";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
-  const textRefs = useSplitText();
+  // const textRefs = useSplitText();
 
   return (
     <footer>
@@ -19,28 +19,7 @@ const Footer = () => {
         data-bg-color=""
       >
         <div className="tp-footer__wrap  ">
-          <div className="tp-cta-area pt-75 pb-75">
-            <div className="container">
-              <div className="tp-cta__box">
-                <div className="row justify-content-center">
-                  <div className="col-xl-7">
-                    <Link href="/contact/">
-                      <div className="tp-cta__item text-center">
-                        <h3
-                          ref={(el) => {
-                            if (el) textRefs.current.push(el);
-                          }}
-                          className="tp-cta__title tp-split__text tp-split__in-right"
-                        >
-                          <span>Get in</span> <span>touch</span>
-                        </h3>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="tp-cta-area pt-75 pb-75"></div>
           {/* <!-- tp cta area end  --> */}
           <div className="container  ">
             <div className="row" style={{ justifyContent: "space-between" }}>
@@ -65,7 +44,7 @@ const Footer = () => {
                           />
                         </Link>
                       </div>
-                      <p style={{ color: "#aaa4a4", fontSize: "14px" }}>
+                      <p style={{ color: "#FBD98C", fontSize: "14px" }}>
                         Accelerate your journey to success with result-oriented
                         solutions for Digital Advertising, Social Media
                         Management, SEO, and Compelling Content backed by more
@@ -74,29 +53,53 @@ const Footer = () => {
                         subcontinent.
                       </p>
                       <div className="tp-contact__social-link">
-                        <Link href="https://www.facebook.com/ritzmediaworld/" >
+                        <Link
+                          href="https://www.facebook.com/ritzmediaworld/"
+                          className="footer-icon"
+                          style={{ border: "none" }}
+                        >
                           <i aria-hidden="true">
-                            <FaFacebookF />
+                            <FaFacebookF color="black" />
                           </i>
                         </Link>
-                        <Link href="https://www.instagram.com/ritzmediaworld/" >
+                        <Link
+                          href="https://www.instagram.com/ritzmediaworld/"
+                          className="footer-icon"
+                          style={{ border: "none" }}
+                        >
                           <i aria-hidden="true">
-                            <FaInstagram />
+                            <FaInstagram color="black" />
                           </i>
                         </Link>
-                        <Link href="https://x.com/i/flow/login?redirect_after_login=%2Fritzmediaworld" target="http://1" rel="http://1">
+                        <Link
+                          href="https://x.com/i/flow/login?redirect_after_login=%2Fritzmediaworld"
+                          target="http://1"
+                          rel="http://1"
+                          className="footer-icon"
+                          style={{ border: "none" }}
+                        >
                           <i aria-hidden="true">
-                            <FaXTwitter />
+                            <FaXTwitter color="black" />
                           </i>
                         </Link>
-                        <Link href="https://www.linkedin.com/company/ritzmediaworld/?originalSubdomain=in">
+                        <Link
+                          href="https://www.linkedin.com/company/ritzmediaworld/?originalSubdomain=in"
+                          className="footer-icon"
+                          style={{ border: "none" }}
+                        >
                           <i aria-hidden="true">
-                            <FaLinkedin />
+                            <FaLinkedin color="black" />
                           </i>
                         </Link>
-                        <Link href="https://www.youtube.com/c/RitzMediaWorldCreativeThinksMedia" target="http://1" rel="http://1">
+                        <Link
+                          href="https://www.youtube.com/c/RitzMediaWorldCreativeThinksMedia"
+                          className="footer-icon"
+                          style={{ border: "none" }}
+                          target="http://1"
+                          rel="http://1"
+                        >
                           <i aria-hidden="true">
-                            <FaYoutube />
+                            <FaYoutube color="black" />
                           </i>
                         </Link>
                       </div>
@@ -110,44 +113,61 @@ const Footer = () => {
                   className="tp-footer__widget footer-col-1-2 mb-40 widget_nav_menu"
                 >
                   <div className="tp-footer-widget-content">
-                    <h3 className="tp-footer__widget-title">Quick Links</h3>
+                    <h3
+                      className="tp-footer__widget-title"
+                      style={{ color: "#F7A31C", fontSize: "20px" }}
+                    >
+                      Quick Links
+                    </h3>
                     <div className="menu-our-location-container">
                       <ul id="menu-our-location" className="menu">
                         <li
                           id="menu-item-140"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"
                         >
-                          <Link href="/">Home</Link>
+                          <Link href="/" style={{ color: "#FBD98C" }}>
+                            Home
+                          </Link>
                         </li>
                         <li
                           id="menu-item-141"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-141"
                         >
-                          <Link href="/about">About</Link>
+                          <Link href="/about" style={{ color: "#FBD98C" }}>
+                            About
+                          </Link>
                         </li>
                         <li
                           id="menu-item-142"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-142"
                         >
-                          <Link href="/services">Services</Link>
+                          <Link href="/services" style={{ color: "#FBD98C" }}>
+                            Services
+                          </Link>
                         </li>
                         <li
                           id="menu-item-143"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-143"
                         >
-                          <Link href="/our-work">Our Work</Link>
+                          <Link href="/our-work" style={{ color: "#FBD98C" }}>
+                            Our Work
+                          </Link>
                         </li>
                         <li
                           id="menu-item-144"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-144"
                         >
-                          <Link href="/blog">Blogs</Link>
+                          <Link href="/blog" style={{ color: "#FBD98C" }}>
+                            Blogs
+                          </Link>
                         </li>
                         <li
                           id="menu-item-144"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-144"
                         >
-                          <Link href="/contact">Contact</Link>
+                          <Link href="/contact" style={{ color: "#FBD98C" }}>
+                            Contact
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -160,14 +180,22 @@ const Footer = () => {
                   className="tp-footer__widget footer-col-1-4 mb-40 widget_nav_menu"
                 >
                   <div className="tp-footer-widget-content">
-                    <h3 className="tp-footer__widget-title">our services</h3>
+                    <h3
+                      className="tp-footer__widget-title"
+                      style={{ color: "#F7A31C", fontSize: "20px" }}
+                    >
+                      our services
+                    </h3>
                     <div className="menu-footer-service-nav-container">
                       <ul id="menu-footer-service-nav" className="menu">
                         <li
                           id="menu-item-135"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"
                         >
-                          <Link href="/services/best-digital-marketing-agency">
+                          <Link
+                            href="/services/best-digital-marketing-agency"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Digital Marketing
                           </Link>
                         </li>
@@ -175,7 +203,10 @@ const Footer = () => {
                           id="menu-item-136"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"
                         >
-                          <Link href="/services/best-print-advertising-agency">
+                          <Link
+                            href="/services/best-print-advertising-agency"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Print Advertising
                           </Link>
                         </li>
@@ -183,7 +214,10 @@ const Footer = () => {
                           id="menu-item-137"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"
                         >
-                          <Link href="/services/top-radio-ad-agency">
+                          <Link
+                            href="/services/top-radio-ad-agency"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Radio Advertising
                           </Link>
                         </li>
@@ -191,7 +225,10 @@ const Footer = () => {
                           id="menu-item-138"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"
                         >
-                          <Link href="/service/leading-creative-agency-india">
+                          <Link
+                            href="/service/leading-creative-agency-india"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Creative Services
                           </Link>
                         </li>
@@ -199,7 +236,10 @@ const Footer = () => {
                           id="menu-item-138"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"
                         >
-                          <Link href="/service/leading-content-marketing-agency">
+                          <Link
+                            href="/service/leading-content-marketing-agency"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Content Marketing
                           </Link>
                         </li>
@@ -207,7 +247,10 @@ const Footer = () => {
                           id="menu-item-139"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"
                         >
-                          <Link href="/services/best-website-designing-company">
+                          <Link
+                            href="/services/best-website-designing-company"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Web Development
                           </Link>
                         </li>
@@ -215,7 +258,10 @@ const Footer = () => {
                           id="menu-item-139"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"
                         >
-                          <Link href="/services/celebrity-endorsement-agency-india">
+                          <Link
+                            href="/services/celebrity-endorsement-agency-india"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Celebrity Endorsements
                           </Link>
                         </li>
@@ -223,7 +269,10 @@ const Footer = () => {
                           id="menu-item-139"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"
                         >
-                          <Link href="/services/influencer-marketing-agency-in-india">
+                          <Link
+                            href="/services/influencer-marketing-agency-in-india"
+                            style={{ color: "#FBD98C" }}
+                          >
                             Influencer Marketing
                           </Link>
                         </li>
@@ -238,24 +287,42 @@ const Footer = () => {
                   className="widget_text tp-footer__widget footer-col-1-3 mb-40 widget_custom_html"
                 >
                   <div className="widget_text tp-footer-widget-content">
-                    <h3 className="tp-footer__widget-title">Contact info</h3>
+                    <h3
+                      className="tp-footer__widget-title"
+                      style={{ color: "#F7A31C", fontSize: "20px" }}
+                    >
+                      Contact info
+                    </h3>
                     <div className="textwidget custom-html-widget">
                       <div className="tp-footer__contact-info">
                         <div className="tp-footer__list">
-                          <Link href="#">
+                          <Link href="#" style={{ color: "#FBD98C" }}>
                             Address: 402 – 404, <br /> 4th floor Corporate Park,{" "}
                             <br />
                             Tower A1 Sector 142, <br /> Greater Noida
                           </Link>
-                          <Link href="tel:09220516777">09220516777</Link>
-                          <Link href="tel:07290002168">07290002168</Link>
+                          <Link
+                            href="tel:09220516777"
+                            style={{ color: "#FBD98C" }}
+                          >
+                            09220516777
+                          </Link>
+                          <Link
+                            href="tel:07290002168"
+                            style={{ color: "#FBD98C" }}
+                          >
+                            07290002168
+                          </Link>
                           <Link
                             href="mailto:
 info@ritzmediaworld.com"
+                            style={{ color: "#FBD98C" }}
                           >
                             info@ritzmediaworld.com
                           </Link>
-                          <Link href="#">Office Hours: 9AM - 7PM</Link>
+                          <Link href="#" style={{ color: "#FBD98C" }}>
+                            Office Hours: 9AM - 7PM
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -271,9 +338,13 @@ info@ritzmediaworld.com"
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-7 ">
                     <div className="tp-copyright__text">
-                      <p>
-                        © 2025 <span> RITZ MEDIA WORLD,</span> All Rights
-                        Reserved
+                      <p style={{ color: "#FBD98C" }}>
+                        © 2025{" "}
+                        <span style={{ color: "#FBD98C" }}>
+                          {" "}
+                          RITZ MEDIA WORLD,
+                        </span>{" "}
+                        All Rights Reserved
                       </p>
                     </div>
                   </div>

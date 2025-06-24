@@ -37,45 +37,55 @@ const Service: React.FC<ServiceProps> = ({ data }) => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Accordion Section */}
+      <div
+        style={{
+          backgroundColor: "#FFA122",
+        }}
+      >
+        <div className="container">
+          <div
+            className="row align-items-center "
+            style={{
+              backgroundColor: "#FFA122",
+              paddingTop: "1rem",
+            }}
+          >
+            <div className="col-xl-6 gx-0">
+              <Accordion data={data} />
+            </div>
 
-        {/* Accordion Section */}
-        <div
-          className="row align-items-center"
-          style={{ backgroundColor: "#FFA122" }}
-        >
-          <div className="col-xl-6 gx-0">
-            <Accordion data={data} />
-          </div>
-
-          {/* Image Section */}
-          <div className="col-xl-6">
-            <div className="tp-services__thumb">
-              <div
-                className=""
-                style={{ position: "relative", width: "60%", margin: "auto" }}
-              >
-                <img
-                  src="/home-images/mobile-frame-img.png"
-                  alt="mobile"
-                  style={{ width: "100%" }}
-                />
-                <video
-                  src="/test-images/test-video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{
-                    position: "absolute",
-                    top: "0",
-                    left: "5px",
-                    width: "95%",
-                    zIndex: "-1",
-                    borderRadius: "50px",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
+            {/* Image Section */}
+            <div className="col-xl-6">
+              <div className="tp-services__thumb">
+                <div
+                  className=""
+                  style={{ position: "relative", width: "60%", margin: "auto" }}
+                >
+                  <img
+                    src="/home-images/mobile-frame-img.png"
+                    alt="mobile"
+                    style={{ width: "100%" }}
+                  />
+                  <video
+                    src="/test-images/test-video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "5px",
+                      width: "95%",
+                      zIndex: "-1",
+                      borderRadius: "50px",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

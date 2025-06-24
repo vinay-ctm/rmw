@@ -47,7 +47,6 @@ const Awards = () => {
                     <div className="tp-awards__thumb text-center text-lg-start">
                       <Image
                         src="/home-images/home-project/Award-440x440.png"
-                        
                         alt="Service First Layer Icon"
                         width={440}
                         height={366}
@@ -56,15 +55,18 @@ const Awards = () => {
                   </div>
 
                   <div className="col-xl-6 col-lg-6">
-                  <div className="tp-awards__item">
+                    <div className="tp-awards__item">
                       <div className="tp-awards__content d-flex align-items-center justify-content-between">
                         <div className="tp-awards__left">
                           <div className="tp-awards__top mb-5 d-flex align-items-center">
                             {/* <h3 className="tp-awards__size">
                                   x <span>2</span>
                                 </h3>  */}
-                            <span className="tp-awards__sm-text">
-                               2024
+                            <span
+                              className="tp-awards__sm-text"
+                              style={{ color: "#8a5a0d" }}
+                            >
+                              2024
                             </span>
                           </div>
                           <div className="tp-awards__name d-flex align-items-center">
@@ -81,7 +83,12 @@ const Awards = () => {
                         </div>
                         <div className="tp-awards__right">
                           <div className="tp-awards__icon">
-                            <Link href="/about/" rel="nofollow" target="_self">
+                            <Link
+                              href="/about/"
+                              rel="nofollow"
+                              target="_self"
+                              className="awards-icon"
+                            >
                               <GoArrowRight
                                 style={{
                                   color: "white",
@@ -101,8 +108,11 @@ const Awards = () => {
                             {/* <h3 className="tp-awards__size">
                                   x <span>2</span>
                                 </h3> */}
-                            <span className="tp-awards__sm-text">
-                               2022
+                            <span
+                              className="tp-awards__sm-text"
+                              style={{ color: "#8a5a0d" }}
+                            >
+                              2022
                             </span>
                           </div>
                           <div className="tp-awards__name d-flex align-items-center">
@@ -116,7 +126,12 @@ const Awards = () => {
                         </div>
                         <div className="tp-awards__right">
                           <div className="tp-awards__icon">
-                            <Link href="/about/" rel="nofollow" target="_self">
+                            <Link
+                              href="/about/"
+                              rel="nofollow"
+                              target="_self"
+                              className="awards-icon"
+                            >
                               <GoArrowRight
                                 style={{
                                   color: "white",
@@ -129,8 +144,7 @@ const Awards = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    
+
                     <div className="tp-awards__item">
                       <div className="tp-awards__content d-flex align-items-center justify-content-between">
                         <div className="tp-awards__left">
@@ -138,8 +152,11 @@ const Awards = () => {
                             {/* <h3 className="tp-awards__size">
                                   x <span>2</span>
                                 </h3> */}
-                            <span className="tp-awards__sm-text">
-                               2022
+                            <span
+                              className="tp-awards__sm-text"
+                              style={{ color: "#8a5a0d" }}
+                            >
+                              2022
                             </span>
                           </div>
                           <div className="tp-awards__name d-flex align-items-center ">
@@ -156,7 +173,12 @@ const Awards = () => {
                         </div>
                         <div className="tp-awards__right">
                           <div className="tp-awards__icon">
-                            <Link href=" /about/" rel="nofollow" target="_self">
+                            <Link
+                              href=" /about/"
+                              rel="nofollow"
+                              target="_self"
+                              className="awards-icon"
+                            >
                               <GoArrowRight
                                 style={{
                                   color: "white",
@@ -176,8 +198,11 @@ const Awards = () => {
                             {/* <h3 className="tp-awards__size">
                                   x <span>2</span>
                                 </h3> */}
-                            <span className="tp-awards__sm-text">
-                               2011
+                            <span
+                              className="tp-awards__sm-text"
+                              style={{ color: "#8a5a0d" }}
+                            >
+                              2011
                             </span>
                           </div>
                           <div className="tp-awards__name d-flex align-items-center">
@@ -194,7 +219,12 @@ const Awards = () => {
                         </div>
                         <div className="tp-awards__right">
                           <div className="tp-awards__icon">
-                            <Link href="/about/" rel="nofollow" target="_self">
+                            <Link
+                              href="/about/"
+                              rel="nofollow"
+                              target="_self"
+                              className="awards-icon"
+                            >
                               <GoArrowRight
                                 style={{
                                   color: "white",

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 interface AccordionItem {
   title: string;
@@ -21,13 +21,20 @@ const Accordion = ({ data }: { data: AccordionItem[] }) => {
       <div className="container">
         <div className="row counter-row">
           <div className="col-12">
-            <div className="tp-accordion">
-              <div className="accordion" id="accordion-310c8f9">
+            <div className="tp-accordion ">
+              <div className="accordion " id="accordion-310c8f9">
                 {data.map((item, index) => (
-                  <div className="accordion-item" key={index}>
+                  <div
+                    className="accordion-item"
+                    key={index}
+                    style={{ borderRadius: 0, backgroundColor: "white" }}
+                  >
                     <h2 className="accordion-header">
                       <button
-                        className={`accordion-button p-relative ${openIndex === index ? '' : 'collapsed'}`}
+                        className={`accordion-button p-relative ${
+                          openIndex === index ? "" : "collapsed"
+                        }`}
+                        style={{ border: "none" }}
                         type="button"
                         onClick={() => toggleAccordion(index)}
                         aria-expanded={openIndex === index}
@@ -42,18 +49,21 @@ const Accordion = ({ data }: { data: AccordionItem[] }) => {
                         <motion.div
                           key="content"
                           initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
+                          animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="accordion-collapse show overflow-hidden"
                         >
-                          <div className="accordion-body">
+                          <div
+                            className="accordion-body"
+                            style={{ border: "none", backgroundColor: "white" }}
+                          >
                             <p>{item.description}</p>
                             <a
                               style={{
-                                fontSize: '18px',
-                                color: '#8A5A0D',
-                                fontStyle: 'italic',
+                                fontSize: "18px",
+                                color: "#8A5A0D",
+                                fontStyle: "italic",
                               }}
                               href={item.link}
                             >
